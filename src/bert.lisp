@@ -70,12 +70,12 @@
 
 (defmethod encode (object &key berp-header)
   (let ((bytes (erlang-term:encode (translate-complex-type object)
-                              :version-tag +protocol-version+)))
-    (if berp-header
-        (concatenate '(vector (unsigned-byte 8))
-                     (uint32-to-bytes (length bytes))
-                     bytes)
-        bytes)))
+                                   :version-tag +protocol-version+)))
+    (when berp-header
+      (concatenate '(vector (unsigned-byte 8))
+                   (uint32-to-bytes (length bytes))
+                   bytes))
+    bytes))
 
 
 (deftype bert-translatable ()
