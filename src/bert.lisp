@@ -1,6 +1,5 @@
 (in-package :bert)
 
-(defconstant +protocol-version+ 131)
 
 (defgeneric translate-complex-type (object)
   (:documentation "Translates tuples with the 'bert' tag to corresponding Lisp objects."))
