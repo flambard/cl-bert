@@ -8,7 +8,8 @@
   :author "Markus Flambard <mflambard@common-lisp.net>"
   :version "0.2.1"
   :license "MIT License"
-  :depends-on (:erlang-term :alexandria)
+  :depends-on ((:version :erlang-term "0.2.0")
+               :alexandria)
   :components
   ((:module :src
             :components
